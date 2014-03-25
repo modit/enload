@@ -1,23 +1,23 @@
 {
   "production": {
-  	"etcd": {
-  		"host": "127.0.0.1",
-  		"port": 4001,
-  		"ssl": {
-  			"cert": "/path/to/ssl.crt",
-    		"key": "/path/to/ssl.key",
+    "etcd": {
+      "host": "127.0.0.1",
+      "port": 4001,
+      "ssl": {
+        "cert": "/path/to/ssl.crt",
+        "key": "/path/to/ssl.key",
         "ca": "/path/to/ssl.ca"
-  		}
-  	},
-  	"addresses": ["127.0.0.1", "::1"],
-  	"ports": [80, 443, 8080, 5858],
-  	"ssl": {
-  		"cert": "/path/to/ssl.crt",
-  		"key": "/path/to/ssl.key",
+      }
+    },
+    "addresses": ["127.0.0.1", "::1"],
+    "ports": [80, 443, 8080, 5858],
+    "ssl": {
+      "cert": "/path/to/ssl.crt",
+      "key": "/path/to/ssl.key",
       "ca": "/path/to/ssl.ca",
-  		"ports": [443]
-  	},
-  	"directory": "domains",
-  	"cache": 30000
+      "ports": [443]
+    },
+    "directory": "domains",
+    "cache": 30000
   }
 }
