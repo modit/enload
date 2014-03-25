@@ -3,6 +3,7 @@
     "etcd": {
       "host": "127.0.0.1",
       "port": 4001,
+      "directory": "domains",
       "ssl": {
         "cert": "/path/to/ssl.crt",
         "key": "/path/to/ssl.key",
@@ -17,7 +18,6 @@
       "ca": "/path/to/ssl.ca",
       "ports": [443]
     },
-    "directory": "domains",
     "cache": 30000
   }
 }

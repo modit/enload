@@ -6,18 +6,66 @@ var cluster = require('cluster')
   , os      = require('os')
   , fs      = require('fs')
   , program = require('commander')
-  , Server  = require('../lib/server');
+  , Server  = require('../lib/server')
+  , extend  = require('extend')
+  , mode    = process.env.SETTINGS_FLAVOR || 'production'
+  , debug   = process.execArgv.join(' ').indexOf('--debug') !== -1;
+  
+function list(val){
+  return val.split(',');
+}
+
+function ports(val){
+  return list(val).map(Number);
+}
 
 program
   .version('0.0.1')
-  .option('-c, --config <path>', 'Config File')
-  .option('-w, --workers', 'Number of Workers')
+  .option('-c,   --config <path>',           'path to config file')
+  .option('-w,   --workers <n>',             'number of Workers (defaults to number of cpus)', parseInt)
+  .option('-a,   --addresses <list>',        'addresses to listen on (defaults to 127.0.0.1,::1)', list, ['127.0.0.1', '::1'])
+  .option('-p,   --ports <list>',            'ports to listen on (defaults to 80)', ports, [80])
+  .option('-s,   --ssl-ports <list>',        'ports to use ssl for', ports, [])
+  .option('-k,   --ssl-key <path>',          'path to ssl private key file')
+  .option('-cr,  --ssl-cert <path>',         'path to ssl certificate file')
+  .option('-ca,  --ssl-ca <list>',           'path(s) to ssl certifcate authority file(s)', list)
+  .option('-t,   --ttl <n>',                 'time to live for cache (defaults to 3000)', parseInt, 3000)
+  .option('-eh,  --etcd-host <value>',       'etcd host address (defaults to 127.0.0.1)', '127.0.0.1')
+  .option('-ep,  --etcd-port <n>',           'etcd host port (defaults to 4001)', parseInt, 4001)
+  .option('-ed,  --etcd-directory <value>',  'etcd root directory for domains (defaults to domains)', 'domains')
+  .option('-ek,  --etcd-ssl-key <path>',     'path to ssl private key file for etcd')
+  .option('-ecr, --etcd-ssl-cert <path>',    'path to ssl certificate file for etcd')
+  .option('-eca, --etcd-ssl-ca <list>',      'path(s) to ssl certifcate authority file(s) for etcd')
   .parse(process.argv);
 
-//get config file from argument
+//Prepare Config
 var config = program.config ? JSON.parse(fs.readFileSync(program.config)) : {};
 
-if (cluster.isMaster) {
+if(!config[mode]) config[mode] = {};
+
+extend(true, config[mode], {
+  addresses:  program.addresses,
+  ports:      program.ports,
+  ttl:        program.ttl,
+  etcd: {
+    host:       program.etcdHost,
+    port:       program.etcdPort,
+    directory:  program.etcdDirectory,
+    ssl: {
+      key:  program.etcdSslKey,
+      cert: program.etcdSslCert,
+      ca:   program.etcdSslCa
+    }
+  },
+  ssl: {
+    key:    program.sslKey,
+    cert:   program.sslCert,
+    ca:     program.sslCa,
+    ports:  program.sslPorts
+  }
+});
+
+if (cluster.isMaster && !debug) {
   //fork workers
   var workers = program.workers || os.cpus().length;
   
@@ -32,6 +80,6 @@ if (cluster.isMaster) {
   });
 } else {
   //Start server
-  var server = new Server(config[process.env.SETTINGS_FLAVOR || 'production']);
+  var server = new Server(config[mode]);
   server.run();
 }

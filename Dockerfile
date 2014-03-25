@@ -6,4 +6,4 @@ RUN wget -O - http://nodejs.org/dist/v0.10.25/node-v0.10.25-linux-x64.tar.gz | t
 RUN npm install git+https://github.com/shannonmpoole/etcd-load-balancer.git -g
 
 EXPOSE 80
-CMD ['etcdlb']
+ENTRYPOINT ['etcdlb']
