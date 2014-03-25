@@ -1,0 +1,16 @@
+{
+  "name": "etcd-router",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "http-proxy": "*",
+    "node-etcd": "*",
+    "lru-cache": "*",
+    "q": "*",
+    "extend": "*",
+    "commander": "*"
+  },
+  "devDependencies": {},
+  "main": "./lib/main.js",
+  "scripts": {}
+}
