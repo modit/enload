@@ -11,6 +11,9 @@
     "commander": "*"
   },
   "devDependencies": {},
-  "main": "./lib/main.js",
+  "main": "./bin/etcdlb",
+  "bin": {
+    "etcdlb": "./bin/etcdlb"
+  },
   "scripts": {}
 }

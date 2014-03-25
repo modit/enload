@@ -1,8 +1,12 @@
+#!/usr/bin/env node
+
+"use strict";
+
 var cluster = require('cluster')
   , os      = require('os')
   , fs      = require('fs')
   , program = require('commander')
-  , Server  = require('./server');
+  , Server  = require('../lib/server');
 
 program
   .version('0.0.1')
