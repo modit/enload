@@ -1,2 +1,7 @@
 #!/bin/bash
+
+# This script is neccessary when passing environment variables to
+# docker entyrpoint until docker implements parsing the environment
+# variables when running the command
+
 eval "etcdlb $@"
