@@ -30,7 +30,7 @@ program
   .option('-cr,  --ssl-cert <path>',         'path to ssl certificate file')
   .option('-ca,  --ssl-ca <list>',           'path(s) to ssl certifcate authority file(s)', list)
   .option('-t,   --ttl <n>',                 'time to live for cache (defaults to 3000)', parseInt, 3000)
-  .option('-eh,  --etcd-host <value>',       'etcd host address (defaults to 127.0.0.1)', '127.0.0.1')
+  .option('-e,   --etcd-host <value>',       'etcd host address (defaults to 127.0.0.1)', '127.0.0.1')
   .option('-ep,  --etcd-port <n>',           'etcd host port (defaults to 4001)', parseInt, 4001)
   .option('-ed,  --etcd-directory <value>',  'etcd root directory for domains (defaults to domains)', 'domains')
   .option('-ek,  --etcd-ssl-key <path>',     'path to ssl private key file for etcd')
