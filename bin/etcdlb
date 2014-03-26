@@ -32,7 +32,7 @@ program
   .option('-t, --ttl <n>',                 'time to live for cache (defaults to 3000)', parseInt, 3000)
   .option('-E, --etcd-host <value>',       'etcd host address (defaults to 127.0.0.1)', '127.0.0.1')
   .option('-P, --etcd-port <n>',           'etcd host port (defaults to 4001)', parseInt, 4001)
-  .option('-D, --etcd-directory <value>',  'etcd root directory for domains (defaults to domains)', 'domains')
+  .option('-D, --etcd-directory <value>',  'etcd root directory for configuration (defaults to etcdlb)', 'etcdlb')
   .option('-K, --etcd-ssl-key <path>',     'path to ssl private key file for etcd')
   .option('-R, --etcd-ssl-cert <path>',    'path to ssl certificate file for etcd')
   .option('-U, --etcd-ssl-ca <list>',      'path(s) to ssl certifcate authority file(s) for etcd')
