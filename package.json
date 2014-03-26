@@ -13,7 +13,8 @@
   "devDependencies": {},
   "main": "./bin/etcdlb",
   "bin": {
-    "etcdlb": "./bin/etcdlb"
+    "etcdlb": "./bin/etcdlb",
+    "etcdlb-docker": "./bin/etcdlb-docker"
   },
   "scripts": {}
 }
