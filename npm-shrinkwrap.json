@@ -1,5 +1,5 @@
 {
-  "name": "etcd-load-balancer",
+  "name": "enload",
   "version": "0.0.1",
   "dependencies": {
     "http-proxy": {

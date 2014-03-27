@@ -1,5 +1,5 @@
 {
-  "name": "etcd-load-balancer",
+  "name": "enload",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -11,10 +11,10 @@
     "commander": "*"
   },
   "devDependencies": {},
-  "main": "./bin/etcdlb",
+  "main": "./bin/enload",
   "bin": {
-    "etcdlb": "./bin/etcdlb",
-    "etcdlb-docker": "./bin/etcdlb-docker"
+    "etcdlb": "./bin/enload",
+    "etcdlb-docker": "./bin/enload-docker"
   },
   "scripts": {}
 }

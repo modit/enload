@@ -9,4 +9,4 @@ RUN npm install -g /src/etcdlb
 
 EXPOSE 80
 
-ENTRYPOINT ["etcdlb-docker"]
+ENTRYPOINT ["enload-docker"]
