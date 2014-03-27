@@ -13,8 +13,8 @@
   "devDependencies": {},
   "main": "./bin/enload",
   "bin": {
-    "etcdlb": "./bin/enload",
-    "etcdlb-docker": "./bin/enload-docker"
+    "enload": "./bin/enload",
+    "enload-docker": "./bin/enload-docker"
   },
   "scripts": {}
 }
