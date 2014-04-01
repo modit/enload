@@ -3,7 +3,7 @@
     "etcd": {
       "host": "127.0.0.1",
       "port": 4001,
-      "directory": "domains",
+      "directory": "enload",
       "ssl": {
         "cert": "/path/to/ssl.crt",
         "key": "/path/to/ssl.key",
