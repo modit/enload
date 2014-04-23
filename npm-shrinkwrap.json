@@ -133,10 +133,6 @@
         }
       }
     },
-    "lru-cache": {
-      "version": "2.5.0",
-      "from": "lru-cache@*"
-    },
     "q": {
       "version": "1.0.1",
       "from": "q@*",

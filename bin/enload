@@ -29,7 +29,7 @@ program
   .option('-k, --ssl-key <path>',          'path to ssl private key file', process.env.ENLOAD_SSL_KEY)
   .option('-r, --ssl-cert <path>',         'path to ssl certificate file', process.env.ENLOAD_SSL_CERT)
   .option('-u, --ssl-ca <list>',           'path(s) to ssl certifcate authority file(s)', list, process.env.ENLOAD_SSL_CA ? list(process.env.ENLOAD_SSL_CA) : [])
-  .option('-t, --ttl <n>',                 'time to live for cache (defaults to 3000)', parseInt, process.env.ENLOAD_TTL || 3000)
+  .option('-t, --ttl <n>',                 'time to live for cache (defaults to 30000)', parseInt, process.env.ENLOAD_TTL || 30000)
   .option('-E, --etcd-host <value>',       'etcd host address (defaults to 127.0.0.1)', process.env.ENLOAD_ETCD_HOST || '127.0.0.1')
   .option('-P, --etcd-port <n>',           'etcd host port (defaults to 4001)', parseInt, process.env.ENLOAD_ETCD_PORT || 4001)
   .option('-D, --etcd-directory <value>',  'etcd root directory for configuration (defaults to enload)', process.env.ENLOAD_ETCD_DIRECTORY || 'enload')

@@ -5,7 +5,6 @@
   "dependencies": {
     "http-proxy": "*",
     "node-etcd": "*",
-    "lru-cache": "*",
     "q": "*",
     "extend": "*",
     "commander": "*"
