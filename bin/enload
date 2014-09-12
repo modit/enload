@@ -32,7 +32,7 @@ program
   .option('-t, --ttl <n>',                 'time to live for cache (defaults to 30000)', parseInt, process.env.ENLOAD_TTL || 30000)
   .option('-E, --etcd-host <value>',       'etcd host address (defaults to 127.0.0.1)', process.env.ENLOAD_ETCD_HOST || '127.0.0.1')
   .option('-P, --etcd-port <n>',           'etcd host port (defaults to 4001)', parseInt, process.env.ENLOAD_ETCD_PORT || 4001)
-  .option('-D, --etcd-directory <value>',  'etcd root directory for configuration (defaults to enload)', process.env.ENLOAD_ETCD_DIRECTORY || '/enload')
+  .option('-D, --etcd-directory <value>',  'etcd root directory for configuration (defaults to enload)', process.env.ENLOAD_ETCD_DIRECTORY || 'enload')
   .option('-K, --etcd-ssl-key <path>',     'path to ssl private key file for etcd', process.env.ENLOAD_ETCD_SSL_KEY)
   .option('-R, --etcd-ssl-cert <path>',    'path to ssl certificate file for etcd', process.env.ENLOAD_ETCD_SSL_KEY)
   .option('-U, --etcd-ssl-ca <list>',      'path(s) to ssl certifcate authority file(s) for etcd', list, process.env.ENLOAD_ETCD_SSL_CA ? list(process.env.ENLOAD_ETCD_SSL_CA) : [])
