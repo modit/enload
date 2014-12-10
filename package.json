@@ -3,11 +3,11 @@
   "version": "0.0.7",
   "private": true,
   "dependencies": {
-    "http-proxy": "*",
-    "node-etcd": "~2.1.4",
-    "q": "*",
+    "commander": "*",
     "extend": "*",
-    "commander": "*"
+    "http-proxy": "*",
+    "node-etcd": "^3.0.2",
+    "q": "*"
   },
   "devDependencies": {},
   "main": "./bin/enload",
